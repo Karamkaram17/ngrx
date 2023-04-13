@@ -1,0 +1,33 @@
+<div class="text-bg-dark" style="position: sticky; top: 0; z-index: 5">
+  <div class="container">
+    <div class="row">
+      <div class="col-6 text-center">
+        <h2>Books</h2>
+      </div>
+      <div class="col-6 text-center">
+        <h2>My Collection</h2>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container mt-2">
+  <div class="row">
+    <div class="col-6 text-center border">
+      <books-book
+        label="add"
+        class="book-list"
+        [books]="(books$ | async)!"
+        (request)="onAdd($event)"
+      ></books-book>
+    </div>
+    <div class="col-6 text-center border">
+      <books-book
+        label="remove"
+        class="book-collection"
+        [books]="(bookCollection$ | async)!"
+        (request)="onRemove($event)"
+      >
+      </books-book>
+    </div>
+  </div>
+</div>

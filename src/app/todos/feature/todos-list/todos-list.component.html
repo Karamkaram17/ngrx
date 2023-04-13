@@ -1,0 +1,16 @@
+<div class="container">
+  <div class="mx-auto border my-3 p-3" style="max-width: 800px">
+    <todos-add-todo
+      [control]="formGroup.controls.description"
+      (addReq)="addTodo()"
+    ></todos-add-todo>
+
+    <div class="mt-3">
+      <todo-todo
+        *ngFor="let todo of allTodos$ | async"
+        (delReq)="deleteTodo($event)"
+        [todo]="todo"
+      ></todo-todo>
+    </div>
+  </div>
+</div>

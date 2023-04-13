@@ -1,0 +1,19 @@
+<form class="row">
+  <div class="col-10">
+    <input
+      type="text"
+      class="form-control"
+      name="todo"
+      [formControl]="control"
+    />
+  </div>
+  <div class="col-2">
+    <button
+      [disabled]="control.invalid"
+      class="btn btn-primary w-100"
+      (click)="add()"
+    >
+      add
+    </button>
+  </div>
+</form>
